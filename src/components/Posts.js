@@ -40,7 +40,7 @@ const Posts = ({ posts, loading }) => {
           <div className="grid-item1"><p className="fw-bold">Address</p><br></br>{item.address}</div>
           <div className="grid-item1"><p className="fw-bold">Designation</p><br></br>{item.designation}</div>
           <div className="grid-item1"><p className="fw-bold">City</p><br></br>{item.city}</div>
-          <div className="grid-item1"><p className="fw-bold">Emails</p><br></br>{item.emails}</div>
+          <div className="grid-item1"><p className="fw-bold">Emails</p><br></br><p id="em">{item.emails}</p></div>
           <div className="grid-item1"><p className="fw-bold">STATE</p><br></br>{item.state}</div>
           <div className="grid-item1"><p className="fw-bold">Phones</p><br></br>{item.phones}</div>
           <div className="grid-item1"><p className="fw-bold">Country</p><br></br>{item.country}</div>

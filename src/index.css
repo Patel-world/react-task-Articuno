@@ -108,7 +108,9 @@ button {
   text-decoration: none;
   padding: .4rem 1.3rem;
 }
-
+p#em {
+  margin-bottom: 0rem !important;
+}
 
 @media only screen and (max-width: 600px) {
   div#root {
