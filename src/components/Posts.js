@@ -7,7 +7,7 @@ const Posts = ({ posts, loading }) => {
 
   
   
-  //const [active, setActive]=useState('view details')
+  const [active, setActive]=useState('view details')
 
   
   if (loading) {
