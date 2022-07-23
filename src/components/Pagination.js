@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
-
+  const[active, setActive] = useState('page-link')
   const [isActive, setIsActive] = useState(false);
   const pageNumbers = [];
 
