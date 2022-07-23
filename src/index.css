@@ -70,8 +70,11 @@ nav {
   /* margin-block-end: 5rem; */
 }
 
-
+p{
+  overflow-wrap: anywhere;
+}
 p#left {
+  overflow-wrap: anywhere;
   text-align: left;
   margin-inline-start: 1rem;
 }
