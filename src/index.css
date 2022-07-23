@@ -35,3 +35,8 @@ p {
   /* background-color: blueviolet; */
 }
 
+ul.pagination {
+  justify-content: center;
+  margin-block-start: 1rem;
+}
+

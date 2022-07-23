@@ -6,6 +6,7 @@ const Listing = () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
+  const page =1;
 
   useEffect(() => {
     fetch(url)
@@ -36,17 +37,37 @@ const Listing = () => {
         id="resizable"
         className="ui-widget-content ui-resizable grid-container1"
       >   
-        {items.map((item) => (
-          <>
+        {items.map((item, i) => (
+          if(page*3<=i){
+            <>
           <div className="ui-widget-content ui-resizable grid-item1">{item.company_name}</div>
           <div className="ui-widget-content ui-resizable grid-item1"><p className="fw-bold">CONTACT</p><br></br>{item.contact_person}</div>
           <div className="ui-widget-content ui-resizable grid-item1"><p className="fw-bold">CITY</p><br></br>{item.city}</div>
           <div className="ui-widget-content ui-resizable grid-item1"><p className="fw-bold">STATE</p><br></br>{item.state}</div>
           <div className="ui-widget-content ui-resizable grid-item1"><button><a href="#">view details</a></button></div>
           </>
+          }
+          
           
         ))}
         </div>
+        <nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
     </div>
     );
   }
