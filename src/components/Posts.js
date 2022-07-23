@@ -7,7 +7,7 @@ const Posts = ({ posts, loading }) => {
 
   
   
-  const [active, setActive]=useState('view details')
+  //const [active, setActive]=useState('view details')
 
   
   if (loading) {
@@ -28,10 +28,10 @@ const Posts = ({ posts, loading }) => {
           <div className="grid-item1"><p className="fw-bold">CONTACT</p><br></br>{item.contact_person}</div>
           <div className="grid-item1"><p className="fw-bold">CITY</p><br></br>{item.city}</div>
           <div className="grid-item1"><p className="fw-bold">STATE</p><br></br>{item.state}</div>
-          <div className="grid-item1"><button onClick={()=>{active=='view details'? setActive('hide details'):setActive('view details');isActive===item.uuid_ ? setIsActive(false): setIsActive(item.uuid_)}}>{active}</button></div>
+          <div className="grid-item1"><button onClick={()=>{active=='view details' && isActive===item.uuid_ ? setActive('hide details'):setActive('view details');isActive===item.uuid_ ? setIsActive(false): setIsActive(item.uuid_)}}>view details</button></div>
           </div>
-          <div className="grid-item1 grid-container2" id={item.uuid_} style={{display: isActive===item.uuid_ ? 'grid' : 'none',}}><h4>Description</h4><p id="left">{item.description}</p>
-          
+          <div className="grid-item1 grid-container2 btr" id={item.uuid_} style={{display: isActive===item.uuid_ ? 'grid' : 'none',}}><div className='grid-item1 grid-container2'><h4>Description</h4><p id="left">{item.description}</p>
+          </div>
           <div
         id="resizable"
         className="grid-container3"
@@ -45,7 +45,7 @@ const Posts = ({ posts, loading }) => {
           <div className="grid-item1"><p className="fw-bold">Phones</p><br></br>{item.phones}</div>
           <div className="grid-item1"><p className="fw-bold">Country</p><br></br>{item.country}</div>
       </div>
-          </div>
+        </div>
           </>
          
           

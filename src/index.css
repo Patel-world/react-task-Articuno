@@ -83,16 +83,18 @@ p#left {
 }
 
 .grid-container2 {
-  border-bottom: 19px solid #f4f7fc;
+  
   border-top: 1px solid #f4f7fc;
   margin: -1rem 0.6rem;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1em;
   background-color: white;
-  padding: 3rem;
+  padding: 1rem;
 }
-
+.btr{
+  border-bottom: 19px solid #f4f7fc;
+}
 
 button {
   display: inline-block;
@@ -102,4 +104,35 @@ button {
   border-radius: .3rem;
   text-decoration: none;
   padding: .4rem 1.3rem;
+}
+
+
+@media only screen and (max-width: 600px) {
+  div#root {
+    margin: 1rem;
+    background-color: #f4f7fc;
+}
+div#resizable {
+  min-width: -webkit-fill-available;
+  padding: 1rem;
+  background-color: #ffffff;
+  margin: 0.6rem;
+}
+  .grid-container1 {
+    display: inline-flex;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1em;
+    flex-direction: column;
+}
+.grid-container2 {
+  
+  border-top: 1px solid #f4f7fc;
+  margin: -1rem 0.6rem;
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: 1fr;
+  gap: 1em;
+  background-color: white;
+  padding: 1rem;
+}
 }
