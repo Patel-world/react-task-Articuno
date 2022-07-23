@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const Listing = () => {
-  const url = "https://swapi.dev/api/people/?format=json";
+  const url = "https://patel-world.github.io/codot/api.json";
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
@@ -13,7 +13,7 @@ const Listing = () => {
       .then(
         (result) => {
           setIsLoaded(true);
-          setItems(result.results);
+          setItems(result);
         },
         // Note: it's important to handle errors here
         // instead of a catch() block so that we don't swallow
@@ -31,13 +31,23 @@ const Listing = () => {
     return <div>Loading...</div>;
   } else {
     return (
-      <ul>
+      <div id="contur">
+      <div
+        id="resizable"
+        className="ui-widget-content ui-resizable grid-container1"
+      >   
         {items.map((item) => (
-          <li key={item.id}>
-            {item.name} {item.name}
-          </li>
+          <>
+          <div className="ui-widget-content ui-resizable grid-item1">{item.company_name}</div>
+          <div className="ui-widget-content ui-resizable grid-item1"><p className="fw-bold">CONTACT</p><br></br>{item.contact_person}</div>
+          <div className="ui-widget-content ui-resizable grid-item1"><p className="fw-bold">CITY</p><br></br>{item.city}</div>
+          <div className="ui-widget-content ui-resizable grid-item1"><p className="fw-bold">STATE</p><br></br>{item.state}</div>
+          <div className="ui-widget-content ui-resizable grid-item1"><button><a href="#">view details</a></button></div>
+          </>
+          
         ))}
-      </ul>
+        </div>
+    </div>
     );
   }
 };
