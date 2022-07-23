@@ -29,6 +29,16 @@ p {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 1em;
 }
+.grid-container2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+}
+.grid-container3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+}
 .grid-item1 {
   text-align: center;
   color: rgb(5, 5, 5);
@@ -40,3 +50,56 @@ ul.pagination {
   margin-block-start: 1rem;
 }
 
+div#root {
+  margin: 4rem;
+  background-color: #f4f7fc;
+}
+div#resizable {
+  padding: 1rem;
+  background-color: #ffffff;
+  margin: 0.6rem;
+}
+div#contur {
+ 
+  
+  padding-block-start: 1rem;
+}
+
+nav {
+  padding-block-end: 0.02rem;
+  /* margin-block-end: 5rem; */
+}
+
+
+p#left {
+  text-align: left;
+  margin-inline-start: 1rem;
+}
+
+.h4, h4 {
+  text-align: left;
+  font-size: calc(1.1rem + 0vw);
+  margin-inline-start: 1rem;
+}
+
+.grid-container2 {
+  border-bottom: 19px solid #f4f7fc;
+  border-top: 1px solid #f4f7fc;
+  margin: -1rem 0.6rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+  background-color: white;
+  padding: 3rem;
+}
+
+
+button {
+  display: inline-block;
+  background-color: white;
+  box-sizing: border-box;
+  border: .12rem solid #CB4133;
+  border-radius: .3rem;
+  text-decoration: none;
+  padding: .4rem 1.3rem;
+}
