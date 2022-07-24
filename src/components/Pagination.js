@@ -14,7 +14,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
       <ul className='pagination'>
         {pageNumbers.map(number => (
           <li key={number} className='page-item'>
-            <a onClick={() => {paginate(number); isActive===number?setIsActive(false):setIsActive(number)}} id={number} href='!#' style={{backgroundColor: isActive===number ? '#dc3545' : '#ffff',}} className={active}>
+            <a onClick={() => {paginate(number); isActive===number?setIsActive(false):setIsActive(number)}} id={number} href='#' style={{backgroundColor: isActive===number ? '#dc3545' : '#ffff',}} className={active}>
               {number}
             </a>
           </li>
