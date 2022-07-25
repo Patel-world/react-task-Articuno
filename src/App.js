@@ -37,8 +37,9 @@ console.log(posts)
       <Posts posts={currentPosts} loading={loading} />
       <Pagination
         postsPerPage={postsPerPage}
-        totalPosts= {30}
+        totalPosts= {posts.length}
         paginate={paginate}
+        currentPage={currentPage}
       />
     </div>
   );

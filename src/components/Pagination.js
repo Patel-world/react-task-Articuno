@@ -1,25 +1,41 @@
 import React, { useState } from 'react';
+import { FiChevronsRight, FiChevronsLeft } from "react-icons/fi";
 
-const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
+
+const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
   const[active, setActive] = useState('page-link')
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(1);
   const pageNumbers = [];
+
 
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
     pageNumbers.push(i);
   }
+  console.log(pageNumbers)
 
   return (
     <nav>
       <ul className='pagination'>
-        {pageNumbers.map(number => (
+      <li className='page-item'>
+            <a onClick={() => {paginate(currentPage-1); setIsActive(currentPage-1)}} style={{display: currentPage>=2 ? 'block' : 'none',}} href='#' className={active}>
+              <FiChevronsLeft />
+            </a>
+          </li>
+       
+        {pageNumbers.slice(currentPage-1, currentPage+4).map(number => (
           <li key={number} className='page-item'>
             <a onClick={() => {paginate(number); isActive===number?setIsActive(false):setIsActive(number)}} id={number} href='#' style={{backgroundColor: isActive===number ? '#dc3545' : '#ffff',}} className={active}>
               {number}
             </a>
           </li>
         ))}
-      </ul>
+     
+        <li className='page-item'>
+            <a onClick={() => {paginate(currentPage+1); setIsActive(currentPage+1)}} href='#' className={active}>
+            <FiChevronsRight />
+            </a>
+          </li>
+        </ul>
     </nav>
   );
 };
