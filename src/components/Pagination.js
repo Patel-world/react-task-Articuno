@@ -17,21 +17,21 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
     <nav>
       <ul className='pagination'>
       <li className='page-item'>
-            <a onClick={() => {paginate(currentPage-1); setIsActive(currentPage-1)}} style={{display: currentPage>=2 ? 'block' : 'none',}} href='#' className={active}>
+            <a onClick={() => {paginate(currentPage-1); setIsActive(currentPage-1)}} style={{display: currentPage>=2 ? 'block' : 'none',}} className={active}>
               <FiChevronsLeft />
             </a>
           </li>
        
         {pageNumbers.slice(currentPage-1, currentPage+4).map(number => (
           <li key={number} className='page-item'>
-            <a onClick={() => {paginate(number); isActive===number?setIsActive(false):setIsActive(number)}} id={number} href='#' style={{backgroundColor: isActive===number ? '#dc3545' : '#ffff',}} className={active}>
+            <a onClick={() => {paginate(number); isActive===number?setIsActive(false):setIsActive(number)}} id={number} style={{backgroundColor: isActive===number ? '#dc3545' : '#ffff',}} className={active}>
               {number}
             </a>
           </li>
         ))}
      
         <li className='page-item'>
-            <a onClick={() => {paginate(currentPage+1); setIsActive(currentPage+1)}} href='#' className={active}>
+            <a onClick={() => {paginate(currentPage+1); setIsActive(currentPage+1)}} className={active}>
             <FiChevronsRight />
             </a>
           </li>
