@@ -41,7 +41,7 @@ const Hero = () => {
   }
   useEffect(()=>{
     google.accounts.id.initialize({
-      client_id: 'Enter your client id here',
+      client_id: '21450313655-858h0b2ho296rce67smparaoct4me9l2.apps.googleusercontent.com',
       callback: handleCallbackResponse
     });
 
@@ -54,7 +54,7 @@ const Hero = () => {
     transform: 'rotateY(180deg)'
    }
   return (
-    <div className='container'>
+    <div className='container1'>
         <div className="top">
             <div>Shipping and Payment</div>
             <div className='end1'>
