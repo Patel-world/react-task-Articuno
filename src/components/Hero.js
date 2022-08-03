@@ -54,7 +54,7 @@ const Hero = () => {
     transform: 'rotateY(180deg)'
    }
   return (
-    <div className='container1'>
+    <div className='container'>
         <div className="top">
             <div>Shipping and Payment</div>
             <div className='end1'>

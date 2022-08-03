@@ -29,7 +29,7 @@ code {
 div#root {
   margin: 0rem 4rem;
 }
-#root > div.container1 > div.top > div.end1 > div.circstart > svg{
+#root > div.container > div.top > div.end1 > div.circstart > svg{
 
     width: 1.2em;
     height: 1.2em;
@@ -43,7 +43,7 @@ div#root {
   flex-wrap: wrap;
   gap: 3em;
 }
-#root > div.container1 > div.top > div.end1 > div.circend > svg{
+#root > div.container > div.top > div.end1 > div.circend > svg{
   color: #fff;
   background-color: #6be38b;
 
@@ -143,7 +143,7 @@ li {
   display: grid;
   grid-template-columns: 1fr 2fr;
 }
-.container1 {
+.container {
   margin: 2rem 0 !important;
   padding: 0 1rem !important;
 }
@@ -202,15 +202,15 @@ p.bold {
 img.img {
   clip-path: circle(50%);
 }
-#root > div.container1 > div.main > div.second > div > div.three > button{
+#root > div.container > div.main > div.second > div > div.three > button{
   padding: 0;
 }
-#root > div.container1 > div.main > div.second > div > div.two > button > img {
+#root > div.container > div.main > div.second > div > div.two > button > img {
   margin-inline-end: 1em;
   width: 35%;
   height: auto;
 }
-#root > div.container1 > div.main > div.second > div > div.two > button {
+#root > div.container > div.main > div.second > div > div.two > button {
   font-size: initial;
   color: #212529;
   padding: 0;
