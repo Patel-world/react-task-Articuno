@@ -16,17 +16,17 @@ const Header = () => {
   return (
     <div className="navbar-1">
       <div className="logo">
-        <div><AiFillAmazonSquare style={style1}/></div>
-        <div><span style={style}>E-</span><span>shop</span></div>
+        <div><a href="#"><AiFillAmazonSquare style={style1}/></a></div>
+        <div><a href='#'><span style={style}>E-</span><span>shop</span></a></div>
       </div>
       <div className="mid hide">
         
-          <div>Men</div><div>Women</div><div>Kids</div>
+          <div><a href="#">Men</a></div><div><a href='#'>Women</a></div><div><a href='#'>Kids</a></div>
         
       </div>
-      <div className="end hide">
+      <div className="end11 hide">
       
-          <div><AiOutlineSearch className='big'/></div><div><IoCartOutline className='big'/></div><div><MdPersonOutline className='big'/></div>
+          <div><a href="#"><AiOutlineSearch className='big'/></a></div><div><a href='#'><IoCartOutline className='big'/></a></div><div><a href='#'><MdPersonOutline className='big'/></a></div>
       
       </div>
     </div>

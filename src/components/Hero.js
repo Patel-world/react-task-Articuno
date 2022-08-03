@@ -1,6 +1,6 @@
 import React from 'react'
 import CountrySelector from './CountrySelector';
-import img from './images/1.jpg'
+
 import visa from '../assets/visa.svg'
 import paypal from '../assets/paypal.svg'
 import maestro from '../assets/maestro.svg'
@@ -11,12 +11,45 @@ import dbd from '../assets/delivermethod/dbd.svg'
 import dhl from '../assets/delivermethod/dhl.svg'
 import fedex from '../assets/delivermethod/fedex.svg'
 import inpost from '../assets/delivermethod/inpost.svg'
-
+import {useEffect} from 'react'
 import { IoCartOutline } from "react-icons/io5";
 import { MdOutlineLocalShipping } from "react-icons/md";
 import { FiArrowLeft } from "react-icons/fi";
+import jwt_decode from "jwt-decode"
+import Cart from './Cart.js'
 
 const Hero = () => {
+  const google = window.google
+  localStorage.setItem("cart",'[{"name":"T-Shirt Summer Vibes","img":"https://i.imgur.com/ZmrpdyU.jpg","price":"89.99","id":"#212315"},{"name":"Basic Slim Fit T-Shirt","img":"https://m.media-amazon.com/images/I/71Hr1QVKO9L._UL1500_.jpg","price":"69.99","id":"#212315"}]')
+  const cart = JSON.parse(localStorage.getItem('cart'))
+  var total=0
+  
+  setTotal()
+  function setTotal(){
+    cart.forEach(e => {
+      total=total+parseFloat(e.price)
+    });
+  }
+  var left = parseFloat(200)-total
+  var str = 'You are $'+left.toFixed(2)+' away from free shipping'
+  var msg = left>0?str:'Shipping Free'
+  console.log(total)
+
+  function handleCallbackResponse(res){
+     console.log("Encoded jwt id token: "+res.credential)
+     console.log(jwt_decode(res.credential))
+  }
+  useEffect(()=>{
+    google.accounts.id.initialize({
+      client_id: 'Enter your client id here',
+      callback: handleCallbackResponse
+    });
+
+    google.accounts.id.renderButton(
+      document.getElementById("signInDiv"),
+      {theme: "outline", size:"large"}
+    )
+  },[]);
   const style = {
     transform: 'rotateY(180deg)'
    }
@@ -35,6 +68,7 @@ const Hero = () => {
                 <div>
                   <button className='green log'>LOG IN</button>
                   <button className='log'>SIGN UP</button>
+                  <div id="signInDiv"></div>
                 </div>
                 <div>
                   <h6>Shipping information</h6>
@@ -77,29 +111,14 @@ const Hero = () => {
             <div className="third">
             <div className="half">
             <h6>Your cart</h6>
-                <div className='top1'>
-                  <div className='start'>
-                    <img className='img' src={img} width="80" height="80"></img>
-                    <ol>
-                      <li className="bold">T-Shirt Summer Vibes</li>
-                      <li className='light'>#261311</li>
-                    </ol>
-                  </div>
-                  <div className='end'>
-                    <ol>
-                      <li className="bold">$89.99</li>
-                      
-                    </ol>
-                    
-                  </div>
-                </div>
+                <Cart cart={cart}/>
                 <button className='tw'>
-                  <p>Total Cost</p><p className='bold'>$159.98</p>
+                  <p>Total Cost</p><p className='bold'>${total}</p>
                 </button>
                 <div>
                   <div className='start'>
                   <MdOutlineLocalShipping className='big'/>
-                    <p>You are $30.02 away from free shipping</p>
+                    <p>{msg}</p>
                   </div>
                 </div>
               </div>

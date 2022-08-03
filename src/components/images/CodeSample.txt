@@ -1,2 +1,0 @@
-https://src.mastercard.com/assets/img/btn/src_chk_btn_178x032px.svg?
-locale=XX_XX&paymentmethod=<accepted_card_brands>&checkoutid=<checkoutID>

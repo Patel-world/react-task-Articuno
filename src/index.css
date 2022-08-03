@@ -22,12 +22,12 @@ code {
 .mid{
   justify-content: space-around;
 }
-.end{
-  justify-content: flex-end;
+.end {
+  justify-content: flex-start;
 }
 
 div#root {
-  margin: 3rem 4rem;
+  margin: 0rem 4rem;
 }
 #root > div.container > div.top > div.end1 > div.circstart > svg{
 
@@ -38,6 +38,7 @@ div#root {
     padding: 4px;
 }
 .end1 {
+  justify-content: flex-end;
   display: flex;
   flex-wrap: wrap;
   gap: 3em;
@@ -73,6 +74,7 @@ div#root {
   padding: 0rem 1rem;
 }
 .logo {
+  font-size: larger;
   align-items: center;
   display: flex;
   justify-content: flex-start;
@@ -89,7 +91,7 @@ li.light {
   color: #636464;
 }
 .half {
-  gap: 2em;
+  gap: 1em;
   display: grid;
 }
 .footer {
@@ -104,6 +106,10 @@ li.light {
 }
 button.log {
   padding: 0.6em 2em;
+}
+a {
+  color: inherit !important;
+  text-decoration: none;
 }
 button {
   border-style: solid;
@@ -139,18 +145,28 @@ li {
 }
 .container {
   margin: 2rem 0 !important;
-  padding: 0 !important;
+  padding: 0 1rem !important;
 }
 button.green {
   background-color: #6be38b;
   color: #fff;
 }
+#root > div.navbar-1 > div.mid.hide > div > a{
+ 
+    font-size: larger;
+
+
+}
 .main {
-  gap: 5em;
+  gap: 4em;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
+div#signInDiv {
+  margin: 2em 1em;
+}
 form {
+  margin-block-start: 2em;
   grid-template-columns: 1fr 1fr;
   display: grid;
 }
@@ -159,6 +175,7 @@ form {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
+
 .tw {
   background-color: #f1f1f1;
   padding: 0;
@@ -199,13 +216,34 @@ img.img {
   padding: 0;
 }
 
+.end11{
+  display: flex;
+
+  flex-wrap: wrap;
+  gap: 0em;
+  justify-content: flex-end;
+}
+
 @media only screen and (max-width: 768px) {
+  div#root {
+    margin: 1em 0rem;
+}
+.end1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3em;
+  justify-content: flex-start;
+}
+button.log {
+  padding: 0.6em 3em;
+}
   .main,form,.top,.three{
     grid-template-columns: 1fr;
   }
   .end{
     justify-content: flex-start;
   }
+  
   .footer {
     display: flex;
     grid-template-columns: 1fr 1fr;
@@ -213,6 +251,7 @@ img.img {
     flex-direction: column-reverse;
 }
 .logo {
+  font-size: larger;
   margin-block-end: 1em;
   align-items: center;
   display: flex;
