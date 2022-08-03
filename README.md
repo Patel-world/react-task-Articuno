@@ -1,10 +1,11 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+clone this via runninng this code to your specific directory in cmd:
+### `git clone https://github.com/Patel-world/react-task-Articuno.git`
 
 ## Available Scripts
 
-In the project directory, you can run:
+Now In the project directory, you can run:
 
 ### `npm start`
 
