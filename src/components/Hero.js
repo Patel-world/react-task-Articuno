@@ -76,8 +76,8 @@ const Hero = () => {
                     <input type="email" placeholder="Email"></input>
                     <input type="text" placeholder="Address"></input>
                     <input type="text" placeholder="First name"></input>
-                    <input type="text" placeholder="City"></input>
                     <input type="text" placeholder="Last name"></input>
+                    <input type="text" placeholder="City"></input>
                     <input type="text" placeholder="Postal code/ZIP"></input>
                     <input type="number" placeholder="Phone number"></input>
                     <CountrySelector />
