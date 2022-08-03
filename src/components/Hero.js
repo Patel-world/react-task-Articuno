@@ -41,7 +41,7 @@ const Hero = () => {
   }
   useEffect(()=>{
     google.accounts.id.initialize({
-      client_id: '21450313655-858h0b2ho296rce67smparaoct4me9l2.apps.googleusercontent.com',
+      client_id: 'client-id',
       callback: handleCallbackResponse
     });
 
