@@ -27,7 +27,7 @@ code {
 }
 
 div#root {
-  margin: 0rem 4rem;
+  margin: 0rem 1rem;
 }
 #root > div.container > div.top > div.end1 > div.circstart > svg{
 
@@ -273,3 +273,8 @@ button.log {
 }
 
 }
+
+@media (min-width: 1200px){
+.container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 1320px !important;
+}}
